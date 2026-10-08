@@ -122,7 +122,7 @@ input:focus,textarea:focus{outline:none!important;background-color:transparent!i
   <div class="sec"><h3>1. ข้อมูลผู้ร้องขอ (Requester)</h3><div class="in">
     <div class="row"><label class="f w2">ชื่อ-นามสกุล<input type="text"></label><label class="f">เบอร์โทรศัพท์<input type="tel"></label></div>
     <div class="row"><label class="f">ตำแหน่ง<input type="text"></label><label class="f">แผนก<input type="text"></label></div>
-    <div class="row"><label class="f">สถานที่ติดตั้ง / ไซต์งาน<input type="text"></label><label class="f">ตู้ Rack<input type="text"></label></div>
+    <div class="row"><label class="f">สถานที่ติดตั้ง / ไซต์งาน<input type="text"></label></div>
   </div></div>
   <div class="sec fill"><h3>2. เปรียบเทียบอุปกรณ์ชำรุดและอุปกรณ์ใหม่ทดแทน (Equipment Comparison)</h3>
     <div class="in cmpbody2">
@@ -147,6 +147,8 @@ input:focus,textarea:focus{outline:none!important;background-color:transparent!i
             <label><input type="checkbox">ไฟกระชาก/ไหม้</label>
             <label><input type="checkbox" name="type1">อื่นๆ <input type="text" aria-label="ประเภทอื่นๆ" style="width:60px"></label>
           </div>
+          <label class="f">อาการเพิ่มเติม<input type="text"></label>
+          <label class="f"><input type="text" aria-label="อาการเพิ่มเติมบรรทัด 2"></label>
         </div>
         <div class="dcol">
           <div class="coltag new">ช่องขวา : อุปกรณ์ใหม่ (ตัวใหม่ / ทดแทน)</div>
@@ -165,8 +167,8 @@ input:focus,textarea:focus{outline:none!important;background-color:transparent!i
         </div>
       </div>
       <div class="pgrid">
-        <div class="pcol"><div class="coltag old">รูปอุปกรณ์เดิม (ตัวเก่า / ชำรุด)</div><label class="photo"><input type="file" accept="image/*"><img alt="รูปอุปกรณ์ที่ชำรุด"><span class="ph"><b>📷</b>คลิกเพื่ออัปโหลดรูปอุปกรณ์เดิม (ชำรุด)</span></label></div>
-        <div class="pcol"><div class="coltag new">รูปอุปกรณ์ใหม่ (ตัวใหม่ / ทดแทน)</div><label class="photo"><input type="file" accept="image/*"><img alt="รูปอุปกรณ์ใหม่หลังติดตั้ง"><span class="ph"><b>📷</b>คลิกเพื่ออัปโหลดรูปอุปกรณ์ใหม่ / หลังติดตั้ง</span></label></div>
+        <div class="pcol"><div class="coltag old">รูปอุปกรณ์เดิม (ตัวเก่า / ชำรุด)</div><label class="photo"><input type="file" accept="image/*"><img alt="รูปอุปกรณ์ที่ชำรุด"><span class="ph"><b></b>คลิกเพื่ออัปโหลดรูปอุปกรณ์เดิม (ชำรุด)</span></label></div>
+        <div class="pcol"><div class="coltag new">รูปอุปกรณ์ใหม่ (ตัวใหม่ / ทดแทน)</div><label class="photo"><input type="file" accept="image/*"><img alt="รูปอุปกรณ์ใหม่หลังติดตั้ง"><span class="ph"><b></b>คลิกเพื่ออัปโหลดรูปอุปกรณ์ใหม่ / หลังติดตั้ง</span></label></div>
       </div>
     </div>
   </div>
@@ -199,7 +201,7 @@ input:focus,textarea:focus{outline:none!important;background-color:transparent!i
           <label class="f">ระยะเวลาส่งมอบ<input type="text"></label>
           <label class="f">ประกัน<input type="text"></label>
         </div>
-        <label class="f">หมายเหตุ<input type="text" aria-label="หมายเหตุ Vendor 1"></label><label class="f"><input type="text" aria-label="หมายเหตุ Vendor 1 บรรทัด 2"></label>
+        <label class="f">หมายเหตุ<input type="text" aria-label="หมายเหตุ Vendor 1"></label><label class="f"><input type="text" aria-label="หมายเหตุ Vendor 1 บรรทัด 2"></label><label class="f"><input type="text" aria-label="หมายเหตุ Vendor 1 บรรทัด 3"></label>
       </div>
       <div class="vb"><b>Vendor 2</b>
         <div class="vg" style="gap:8px 14px">
@@ -210,7 +212,7 @@ input:focus,textarea:focus{outline:none!important;background-color:transparent!i
           <label class="f">ระยะเวลาส่งมอบ<input type="text"></label>
           <label class="f">ประกัน<input type="text"></label>
         </div>
-        <label class="f">หมายเหตุ<input type="text" aria-label="หมายเหตุ Vendor 2"></label><label class="f"><input type="text" aria-label="หมายเหตุ Vendor 2 บรรทัด 2"></label>
+        <label class="f">หมายเหตุ<input type="text" aria-label="หมายเหตุ Vendor 2"></label><label class="f"><input type="text" aria-label="หมายเหตุ Vendor 2 บรรทัด 2"></label><label class="f"><input type="text" aria-label="หมายเหตุ Vendor 2 บรรทัด 3"></label>
       </div>
       <div class="vb"><b>Vendor 3</b>
         <div class="vg" style="gap:8px 14px">
@@ -221,7 +223,7 @@ input:focus,textarea:focus{outline:none!important;background-color:transparent!i
           <label class="f">ระยะเวลาส่งมอบ<input type="text"></label>
           <label class="f">ประกัน<input type="text"></label>
         </div>
-        <label class="f">หมายเหตุ<input type="text" aria-label="หมายเหตุ Vendor 3"></label><label class="f"><input type="text" aria-label="หมายเหตุ Vendor 3 บรรทัด 2"></label>
+        <label class="f">หมายเหตุ<input type="text" aria-label="หมายเหตุ Vendor 3"></label><label class="f"><input type="text" aria-label="หมายเหตุ Vendor 3 บรรทัด 2"></label><label class="f"><input type="text" aria-label="หมายเหตุ Vendor 3 บรรทัด 3"></label>
       </div>
   </div></div>
   <div class="foot"><span>NT-ERF · Replacement Equipment</span><span>หน้า 2 / 2</span></div>
