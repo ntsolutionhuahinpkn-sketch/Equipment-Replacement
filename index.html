@@ -48,9 +48,9 @@ table{width:100%;border-collapse:collapse}
 td,th{border:1px solid #333;padding:3px 6px;vertical-align:middle}
 th{background:#eef1f7;font-weight:600;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .sig td{width:50%;height:auto;vertical-align:top;padding:6px 6px 5px;text-align:center}
-.sig .line{height:48px;border-bottom:1px dotted #333;margin-bottom:3px}
+.sig .line{height:56px;border-bottom:1px dotted #333;margin-bottom:3px}
 .sig .nm{font-weight:600;margin-bottom:3px}
-.sig .f{margin-top:3px;font-size:12px}
+.sf{display:flex;gap:5px;align-items:flex-end;margin-top:8px;font-size:13px;white-space:nowrap}.sf i{flex:1;border-bottom:1px dotted #333;height:1em}
 .foot{margin-top:auto;display:flex;justify-content:space-between;font-size:11px;color:var(--soft);padding-top:4px}
 .grow{flex:1}
 @media screen and (max-width:820px){
@@ -185,15 +185,12 @@ input:focus,textarea:focus{outline:none!important;background:transparent!importa
     <div class="opts">
       <label><input type="radio" name="old">ส่งคืนคลัง</label>
       <label><input type="radio" name="old">ส่งเคลม Vendor</label>
-      <label><input type="radio" name="old">ขอแทงจำหน่าย (Write-Off)</label>
+      <label><input type="radio" name="old">ตัดจำหน่าย (Write-Off)</label>
     </div>
   </div></div>
 
   <div class="sec"><h3>9. ลายมือชื่อ (Signatures)</h3>
-    <table class="sig"><tr>
-      <td><div class="nm">ผู้ส่งคำร้อง</div><div class="line"></div><label class="f">(<input type="text" aria-label="ชื่อผู้ส่งคำร้อง">)</label><label class="f">ตำแหน่ง<input type="text"></label><label class="f">วันที่<input type="text"></label></td>
-                  <td><div class="nm">ผู้มีอำนาจอนุมัติ</div><div class="line"></div><label class="f">(<input type="text" aria-label="ชื่อผู้อนุมัติ">)</label><label class="f">ตำแหน่ง<input type="text"></label><label class="f">วันที่<input type="text"></label></td>
-    </tr></table>
+    <table class="sig"><tr><td><div class="nm">ผู้ส่งคำร้อง</div><div class="line"></div><div class="sf"><span>(</span><i></i><span>)</span></div><div class="sf"><span>ตำแหน่ง</span><i></i></div><div class="sf"><span>วันที่</span><i></i></div></td><td><div class="nm">ผู้มีอำนาจอนุมัติ</div><div class="line"></div><div class="sf"><span>(</span><i></i><span>)</span></div><div class="sf"><span>ตำแหน่ง</span><i></i></div><div class="sf"><span>วันที่</span><i></i></div></td></tr></table>
   </div>
   <div class="foot"><span>NT-ERF · Replacement Equipment</span><span>หน้า 2 / 2</span></div>
 </section>
