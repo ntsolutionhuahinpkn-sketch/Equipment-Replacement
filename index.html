@@ -30,8 +30,8 @@ body{margin:0;background:var(--bg);font-family:"Sarabun","TH Sarabun New","Noto 
 .row{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap}
 .f{display:flex;gap:5px;align-items:flex-end;flex:1;min-width:0;white-space:nowrap}
 .f.w2{flex:2}
-input[type=text],input[type=date],input[type=tel]{font:inherit;flex:1;min-width:0;border:0;border-bottom:1px dotted #333;background:transparent;color:#111;padding:1px 2px;border-radius:0}
-input[type=text]:focus,input[type=date]:focus,input[type=tel]:focus,textarea:focus{outline:2px solid #3b6fd8;background:#f2f6ff}
+input[type=text],input[type=date],input[type=tel]{font:inherit;flex:1;min-width:0;border:0;background-color:transparent;background-image:linear-gradient(90deg,#000 0 1.5px,transparent 1.5px 5px);background-size:5px 1.5px;background-repeat:repeat-x;background-position:left bottom;-webkit-print-color-adjust:exact;print-color-adjust:exact;color:#111;padding:1px 2px 3px;border-radius:0}
+input[type=text]:focus,input[type=date]:focus,input[type=tel]:focus,textarea:focus{outline:2px solid #3b6fd8;background-color:#f2f6ff}
 .opts{display:flex;flex-wrap:wrap;gap:4px 16px;align-items:center}
 .opts label{display:flex;gap:5px;align-items:center;cursor:pointer;white-space:nowrap}
 .opts input{width:15px;height:15px;margin:0;accent-color:#16294d}
@@ -47,12 +47,25 @@ textarea{font:inherit;width:100%;resize:none;border:1px solid #999;padding:0 5px
 table{width:100%;border-collapse:collapse}
 td,th{border:1px solid #333;padding:3px 6px;vertical-align:middle}
 th{background:#eef1f7;font-weight:600;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.sig td{width:50%;height:auto;vertical-align:top;padding:6px 6px 5px;text-align:center}
-.sig .line{height:56px;border-bottom:1px dotted #333;margin-bottom:3px}
-.sig .nm{font-weight:600;margin-bottom:3px}
-.sf{display:flex;gap:5px;align-items:flex-end;margin-top:8px;font-size:13px;white-space:nowrap}.sf i{flex:1;border-bottom:1px dotted #333;height:1em}
 .foot{margin-top:auto;display:flex;justify-content:space-between;font-size:11px;color:var(--soft);padding-top:4px}
-.grow{flex:1}
+.sec.fill{flex:1;display:flex;flex-direction:column;min-height:0}
+.sec.fill>.in{flex:1;min-height:0}
+.sec.fill textarea{flex:1;height:auto;min-height:18mm}
+.opts.g2{display:grid;grid-template-columns:1fr 1fr;gap:4px 8px}
+.vb{flex:1;border:1px solid #888;padding:5px 7px;display:flex;flex-direction:column;gap:5px;min-height:0}
+.vb b{font-size:13px}
+.vb .vg{display:grid;grid-template-columns:1fr 1fr;gap:5px 14px}
+.vb textarea{flex:1;height:auto;min-height:12mm}
+.cmpbody2{display:flex;flex-direction:column;gap:8px;padding:6px}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;flex:1;min-height:60mm}
+.pcol{display:flex;flex-direction:column;gap:4px;min-width:0}
+.pcol .photo{flex:1;height:auto;min-height:60mm}
+.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.dcol{display:flex;flex-direction:column;gap:8px;min-width:0}
+.dcol .f{flex:none;width:100%}
+.coltag{font-weight:700;font-size:13.5px;padding:2px 0;}
+.lines{display:flex;flex-direction:column;gap:8px}
+.vb{justify-content:space-between}
 @media screen and (max-width:820px){
 body{font-size:15px}
 .bar{padding:8px 10px;gap:8px}.bar b{flex:1 1 100%;font-size:14px}.bar button{flex:1;padding:10px 8px}
@@ -62,19 +75,18 @@ body{font-size:15px}
 .row{gap:8px}
 .f,.f.w2{flex:1 1 100%;white-space:normal;flex-wrap:wrap;align-items:flex-start;flex-direction:column;gap:2px}
 .f input{width:100%;flex:none}
-.f.sg{flex-direction:row;align-items:flex-end}
-input[type=text],input[type=date],input[type=tel]{font-size:16px;padding:6px 2px;border-bottom:1px solid #777}
+input[type=text],input[type=date],input[type=tel]{font-size:16px;padding:6px 2px 7px}
 textarea{font-size:16px}
 .opts{gap:8px 14px}.opts label{padding:3px 0}.opts input{width:20px;height:20px}
 .opts input[type=text]{width:140px}
-.photo,.photo.grow{height:auto!important;min-height:0!important;aspect-ratio:4/3}
-.sec.grow{flex:none}
-table.test,table.test tbody,table.test tr,table.test td{display:block;width:100%}
-table.test tr:first-child{display:none}
-table.test tr{border-bottom:2px solid #333;padding:4px 0}
-table.test td{border:0;padding:3px 6px}
-.sig,.sig tbody,.sig tr,.sig td{display:block;width:100%!important}
-.sig td{border:0;border-bottom:1px solid #333;padding:10px 8px}
+.photo{height:auto!important;min-height:0!important;aspect-ratio:4/3}
+.pgrid{gap:8px;min-height:0}
+.pcol .photo{min-height:0!important;aspect-ratio:3/4!important}
+.dgrid{grid-template-columns:1fr;gap:14px}
+.sec.fill{flex:none}
+.sec.fill textarea,.vb textarea{flex:none;height:21mm}
+.vb{flex:none}.vb .vg{grid-template-columns:1fr}
+.opts.g2{grid-template-columns:1fr}
 .foot{margin-top:10px}
 }
 @page{size:A4 portrait;margin:0}
@@ -86,8 +98,7 @@ html,body{background:#fff;width:210mm}
 .page{margin:0;box-shadow:none;width:210mm;height:296mm;break-after:page;page-break-after:always}
 .page:last-child{break-after:auto;page-break-after:auto}
 .photo{border:1.2px solid #444}
-input[type=text],input[type=date],input[type=tel]{border-bottom:1px solid #333}
-input:focus,textarea:focus{outline:none!important;background:transparent!important}
+input:focus,textarea:focus{outline:none!important;background-color:transparent!important}
 }
 </style>
 </head>
@@ -97,106 +108,125 @@ input:focus,textarea:focus{outline:none!important;background:transparent!importa
   <button type="button" id="printBtn">🖨️ พิมพ์ / บันทึกเป็น PDF</button>
   <button type="button" class="warn" id="clearBtn">🔄 ล้างข้อมูล</button>
 </div>
-
 <div class="sheets" id="form">
-
-<!-- ================= หน้า 1 ================= -->
 <section class="page">
   <div class="org">
     <small>บริษัท โทรคมนาคมแห่งชาติ จำกัด (มหาชน) · National Telecom Public Company Limited</small>
     <h1>แบบฟอร์มบันทึกการขอเปลี่ยนและสับเปลี่ยนอุปกรณ์ชำรุดทดแทน</h1>
-    <h2>Equipment Replacement &amp; Swap Request Form</h2>
+    <h2>Equipment Replacement &amp; Swap Request Form — Network / NVR / UPS</h2>
   </div>
   <div class="row" style="margin-bottom:7px">
     <label class="f w2">เลขที่เอกสาร / Doc No.<input type="text" id="docno"></label>
     <label class="f">วันที่แจ้ง / Date<input type="date" id="reqdate"></label>
   </div>
-
   <div class="sec"><h3>1. ข้อมูลผู้ร้องขอ (Requester)</h3><div class="in">
     <div class="row"><label class="f w2">ชื่อ-นามสกุล<input type="text"></label><label class="f">เบอร์โทรศัพท์<input type="tel"></label></div>
-    <div class="row"><label class="f">ตำแหน่ง<input type="text"></label><label class="f">ฝ่าย<input type="text"></label><label class="f">แผนก<input type="text"></label></div>
+    <div class="row"><label class="f">ตำแหน่ง<input type="text"></label><label class="f">แผนก<input type="text"></label></div>
     <div class="row"><label class="f">สถานที่ติดตั้ง / ไซต์งาน<input type="text"></label><label class="f">ตู้ Rack<input type="text"></label></div>
   </div></div>
-
-  <div class="sec"><h3>2. รายละเอียดอุปกรณ์ที่ชำรุด (Defective Equipment)</h3><div class="in">
-    <div class="opts"><span>ประเภทอุปกรณ์:</span>
-      <label><input type="radio" name="type1">NVR</label>
-      <label><input type="radio" name="type1">UPS</label>
-      <label><input type="radio" name="type1">Switch / Router</label>
-      <label><input type="radio" name="type1">AP</label>
-      <label><input type="radio" name="type1">อื่นๆ <input type="text" aria-label="ประเภทอื่นๆ"></label>
+  <div class="sec fill"><h3>2. เปรียบเทียบอุปกรณ์ชำรุดและอุปกรณ์ใหม่ทดแทน (Equipment Comparison)</h3>
+    <div class="in cmpbody2">
+      <div class="dgrid">
+        <div class="dcol">
+          <div class="coltag old">ช่องซ้าย : อุปกรณ์เดิม (ตัวเก่า / ชำรุด)</div>
+          <div class="opts"><span>ประเภท:</span>
+            <label><input type="radio" name="type1">Switch/Router</label>
+            <label><input type="radio" name="type1">Access Point</label>
+            <label><input type="radio" name="type1">NVR</label>
+            <label><input type="radio" name="type1">UPS</label>
+            <label><input type="radio" name="type1">อื่นๆ <input type="text" aria-label="ประเภทอื่นๆ" style="width:60px"></label>
+          </div>
+          <label class="f">ยี่ห้อ<input type="text"></label>
+          <label class="f">รุ่น<input type="text"></label>
+          <label class="f">S/N<input type="text"></label>
+          <label class="f">Asset Tag<input type="text"></label>
+          <div>อาการชำรุด:</div>
+          <div class="opts g2">
+            <label><input type="checkbox">เปิดไม่ติด</label>
+            <label><input type="checkbox">รีสตาร์ตเอง</label>
+            <label><input type="checkbox">ไฟกระชาก/ไหม้</label>
+            <label><input type="checkbox" name="type1">อื่นๆ <input type="text" aria-label="ประเภทอื่นๆ" style="width:60px"></label>
+          </div>
+        </div>
+        <div class="dcol">
+          <div class="coltag new">ช่องขวา : อุปกรณ์ใหม่ (ตัวใหม่ / ทดแทน)</div>
+          <div class="opts"><span>ประเภท:</span>
+            <label><input type="radio" name="type2">Switch/Router</label>
+            <label><input type="radio" name="type2">Access Point</label>
+            <label><input type="radio" name="type2">NVR</label>
+            <label><input type="radio" name="type2">UPS</label>
+            <label><input type="radio" name="type2">อื่นๆ <input type="text" aria-label="ประเภทอื่นๆ" style="width:60px"></label>
+          </div>
+          <label class="f">ยี่ห้อ<input type="text"></label>
+          <label class="f">รุ่น<input type="text"></label>
+          <label class="f">หมายเหตุ<input type="text"></label>
+          <label class="f"><input type="text" aria-label="หมายเหตุบรรทัด 2"></label>
+          <label class="f"><input type="text" aria-label="หมายเหตุบรรทัด 3"></label>
+        </div>
+      </div>
+      <div class="pgrid">
+        <div class="pcol"><div class="coltag old">รูปอุปกรณ์เดิม (ตัวเก่า / ชำรุด)</div><label class="photo"><input type="file" accept="image/*"><img alt="รูปอุปกรณ์ที่ชำรุด"><span class="ph"><b>📷</b>คลิกเพื่ออัปโหลดรูปอุปกรณ์เดิม (ชำรุด)</span></label></div>
+        <div class="pcol"><div class="coltag new">รูปอุปกรณ์ใหม่ (ตัวใหม่ / ทดแทน)</div><label class="photo"><input type="file" accept="image/*"><img alt="รูปอุปกรณ์ใหม่หลังติดตั้ง"><span class="ph"><b>📷</b>คลิกเพื่ออัปโหลดรูปอุปกรณ์ใหม่ / หลังติดตั้ง</span></label></div>
+      </div>
     </div>
-    <div class="row"><label class="f">ยี่ห้อ (Brand)<input type="text"></label><label class="f">รุ่น (Model)<input type="text"></label></div>
-    <div class="row"><label class="f">หมายเลขเครื่อง (S/N)<input type="text"></label><label class="f">หมายเลขครุภัณฑ์ (Asset Tag)<input type="text"></label></div>
-    <div class="row"><label class="f">MAC Address<input type="text"></label></div>
-  </div></div>
-
-  <div class="sec"><h3>3. อาการเสีย (Symptoms)</h3><div class="in">
-    <div class="opts">
-      <label><input type="checkbox">เปิดไม่ติด</label>
-      <label><input type="checkbox">เครื่องรีสตาร์ตเอง</label>
-      <label><input type="checkbox">แบตเสื่อม / ไม่สำรองไฟ</label>
-      <label><input type="checkbox">พอร์ต LAN เสีย</label>
-      <label><input type="checkbox">HDD ไม่บันทึกภาพ</label>
-      <label><input type="checkbox">ไฟกระชาก / ไหม้</label>
-    </div>
-    <div>อาการเพิ่มเติม / รายละเอียด:</div>
-    <textarea aria-label="อาการเพิ่มเติม"></textarea>
-  </div></div>
-
-  <div class="sec grow" style="display:flex;flex-direction:column"><h3>4. รูปภาพอุปกรณ์ที่ชำรุด (Photo)</h3><div class="in grow">
-    <label class="photo grow" style="height:auto;min-height:55mm"><input type="file" accept="image/*"><img alt="รูปอุปกรณ์ที่ชำรุด"><span class="ph"><b>📷</b>คลิกเพื่ออัปโหลดรูปอุปกรณ์ชำรุด</span></label>
-  </div></div>
-  <div class="foot"><span>NT-ERF · Defective Equipment</span><span>หน้า 1 / 2</span></div>
+  </div>
+  <div class="foot"><span>NT-ERF · Equipment Comparison</span><span>หน้า 1 / 2</span></div>
 </section>
-
-<!-- ================= หน้า 2 ================= -->
 <section class="page">
   <div class="org">
     <small>บริษัท โทรคมนาคมแห่งชาติ จำกัด (มหาชน) · National Telecom Public Company Limited</small>
     <h1>ข้อมูลอุปกรณ์ใหม่ที่นำมาทดแทน (Replacement Equipment)</h1>
   </div>
-
-  <div class="sec"><h3>5. สถานะของอุปกรณ์ใหม่ และข้อมูลอุปกรณ์</h3><div class="in">
-    <div class="opts"><span>สถานะ:</span>
-      <label><input type="radio" name="st">ของใหม่แกะกล่อง</label>
-      <label><input type="radio" name="st">เครื่องสำรอง (Spare Part)</label>
-      <label><input type="radio" name="st">เครื่องเคลม (Warranty Replacement)</label>
-    </div>
+  <div class="sec"><h3>3. รายละเอียดอุปกรณ์ใหม่ (New Equipment)</h3><div class="in">
+    <div class="opts"><span>ประเภท:</span>
+            <label><input type="radio" name="type3">Switch/Router</label>
+            <label><input type="radio" name="type3">Access Point</label>
+            <label><input type="radio" name="type3">NVR</label>
+            <label><input type="radio" name="type3">UPS</label>
+            <label><input type="radio" name="type3">อื่นๆ <input type="text" aria-label="ประเภทอื่นๆ" style="width:60px"></label>
+          </div>
     <div class="row"><label class="f">ยี่ห้อ (Brand)<input type="text"></label><label class="f">รุ่น (Model)<input type="text"></label></div>
-    <div class="row"><label class="f">หมายเลขเครื่องใหม่ (New S/N)<input type="text"></label><label class="f">หมายเลขครุภัณฑ์ใหม่<input type="text"></label></div>
-    <div class="row"><label class="f">MAC Address ใหม่<input type="text"></label><label class="f">วันที่ติดตั้ง<input type="date"></label></div>
+    <div>รายละเอียด / Specification ของอุปกรณ์ใหม่:</div>
+    <div class="lines"><label class="f"><input type="text" aria-label="Specification บรรทัด 1"></label><label class="f"><input type="text" aria-label="Specification บรรทัด 2"></label><label class="f"><input type="text" aria-label="Specification บรรทัด 3"></label><label class="f"><input type="text" aria-label="Specification บรรทัด 4"></label></div>
   </div></div>
-
-  <div class="sec grow" style="display:flex;flex-direction:column"><h3>6. รูปภาพอุปกรณ์ใหม่ / หลังติดตั้ง (Photo)</h3><div class="in grow">
-    <label class="photo grow" style="height:auto;min-height:45mm"><input type="file" accept="image/*"><img alt="รูปอุปกรณ์ใหม่หลังติดตั้ง"><span class="ph"><b>📷</b>คลิกเพื่ออัปโหลดรูปอุปกรณ์ใหม่ / หลังติดตั้ง</span></label>
+  <div class="sec fill"><h3>4. ข้อมูล Vendor (เปรียบเทียบ 3 ราย)</h3><div class="in" style="display:flex;flex-direction:column;gap:7px">
+      <div class="vb"><b>Vendor 1</b>
+        <div class="vg" style="gap:8px 14px">
+          <label class="f">ชื่อบริษัท Vendor<input type="text"></label>
+          <label class="f">ผู้ติดต่อ / โทร<input type="text"></label>
+          <label class="f">ยี่ห้อ / รุ่นที่เสนอ<input type="text"></label>
+          <label class="f">ราคา (บาท)<input type="text" inputmode="decimal"></label>
+          <label class="f">ระยะเวลาส่งมอบ<input type="text"></label>
+          <label class="f">ประกัน<input type="text"></label>
+        </div>
+        <label class="f">หมายเหตุ<input type="text" aria-label="หมายเหตุ Vendor 1"></label><label class="f"><input type="text" aria-label="หมายเหตุ Vendor 1 บรรทัด 2"></label>
+      </div>
+      <div class="vb"><b>Vendor 2</b>
+        <div class="vg" style="gap:8px 14px">
+          <label class="f">ชื่อบริษัท Vendor<input type="text"></label>
+          <label class="f">ผู้ติดต่อ / โทร<input type="text"></label>
+          <label class="f">ยี่ห้อ / รุ่นที่เสนอ<input type="text"></label>
+          <label class="f">ราคา (บาท)<input type="text" inputmode="decimal"></label>
+          <label class="f">ระยะเวลาส่งมอบ<input type="text"></label>
+          <label class="f">ประกัน<input type="text"></label>
+        </div>
+        <label class="f">หมายเหตุ<input type="text" aria-label="หมายเหตุ Vendor 2"></label><label class="f"><input type="text" aria-label="หมายเหตุ Vendor 2 บรรทัด 2"></label>
+      </div>
+      <div class="vb"><b>Vendor 3</b>
+        <div class="vg" style="gap:8px 14px">
+          <label class="f">ชื่อบริษัท Vendor<input type="text"></label>
+          <label class="f">ผู้ติดต่อ / โทร<input type="text"></label>
+          <label class="f">ยี่ห้อ / รุ่นที่เสนอ<input type="text"></label>
+          <label class="f">ราคา (บาท)<input type="text" inputmode="decimal"></label>
+          <label class="f">ระยะเวลาส่งมอบ<input type="text"></label>
+          <label class="f">ประกัน<input type="text"></label>
+        </div>
+        <label class="f">หมายเหตุ<input type="text" aria-label="หมายเหตุ Vendor 3"></label><label class="f"><input type="text" aria-label="หมายเหตุ Vendor 3 บรรทัด 2"></label>
+      </div>
   </div></div>
-
-  <div class="sec"><h3>7. บันทึกผลทดสอบหลังเปลี่ยน (Testing Checklist)</h3>
-    <table class="test">
-      <tr><th style="width:38%">รายการทดสอบ</th><th style="width:22%">ผลการทดสอบ</th><th>หมายเหตุ</th></tr>
-      <tr><td>จ่ายไฟ / สำรองไฟ (Power / Backup)</td><td><div class="opts"><label><input type="radio" name="t1">ปกติ</label><label><input type="radio" name="t1">ไม่ปกติ</label></div></td><td><input type="text" style="width:100%"></td></tr>
-      <tr><td>Network Link / IP</td><td><div class="opts"><label><input type="radio" name="t2">ปกติ</label><label><input type="radio" name="t2">ไม่ปกติ</label></div></td><td><input type="text" style="width:100%"></td></tr>
-      <tr><td>การบันทึกภาพ NVR (Recording)</td><td><div class="opts"><label><input type="radio" name="t3">ปกติ</label><label><input type="radio" name="t3">ไม่ปกติ</label></div></td><td><input type="text" style="width:100%"></td></tr>
-    </table>
-  </div>
-
-  <div class="sec"><h3>8. การจัดการอุปกรณ์เก่าที่ถอดออก</h3><div class="in">
-    <div class="opts">
-      <label><input type="radio" name="old">ส่งคืนคลัง</label>
-      <label><input type="radio" name="old">ส่งเคลม Vendor</label>
-      <label><input type="radio" name="old">ตัดจำหน่าย (Write-Off)</label>
-    </div>
-  </div></div>
-
-  <div class="sec"><h3>9. ลายมือชื่อ (Signatures)</h3>
-    <table class="sig"><tr><td><div class="nm">ผู้ส่งคำร้อง</div><div class="line"></div><div class="sf"><span>(</span><i></i><span>)</span></div><div class="sf"><span>ตำแหน่ง</span><i></i></div><div class="sf"><span>วันที่</span><i></i></div></td><td><div class="nm">ผู้มีอำนาจอนุมัติ</div><div class="line"></div><div class="sf"><span>(</span><i></i><span>)</span></div><div class="sf"><span>ตำแหน่ง</span><i></i></div><div class="sf"><span>วันที่</span><i></i></div></td></tr></table>
-  </div>
   <div class="foot"><span>NT-ERF · Replacement Equipment</span><span>หน้า 2 / 2</span></div>
 </section>
-
 </div>
-
 <script>
 (function(){
   var d=document.getElementById('reqdate');
@@ -216,7 +246,7 @@ input:focus,textarea:focus{outline:none!important;background:transparent!importa
     if(!confirm('ต้องการล้างข้อมูลทั้งหมดในแบบฟอร์มหรือไม่?'))return;
     document.querySelectorAll('input,textarea').forEach(function(el){
       if(el.type==='checkbox'||el.type==='radio')el.checked=false;
-      else el.value='';
+      else if(el.type!=='file')el.value='';
     });
     document.querySelectorAll('.photo').forEach(function(b){b.classList.remove('has');b.querySelector('img').removeAttribute('src')});
     d.value=today();
